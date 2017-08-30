@@ -7,7 +7,7 @@ let fieldNames = ['Title', 'Price', 'ImageURL','URL','Time']
 let data = new Date();
 let list=[];
 let year = data.getFullYear();
-let month = ("0"+data.getMonth()).slice(-2);
+let month = ("0"+(data.getMonth()+1)).slice(-2);
 let day = ("0"+data.getDate()).slice(-2);
 let dataDisplay = `${year}-${month}-${day}`;
 
@@ -59,7 +59,7 @@ scrapeIt("http://www.shirts4mike.com/shirts.php", {
                 if(err){
                     throw err;
                 } else{
-                    // small problem it actually runs 6 times-------------------------------
+                    // small problem it actually runs 8 times-------------------------------
                     // file saved 8 times------------------------------
                     //console.log('file.saved')
                 }
