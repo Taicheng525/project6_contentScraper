@@ -10,6 +10,7 @@ let year = data.getFullYear();
 let month = ("0"+(data.getMonth()+1)).slice(-2);
 let day = ("0"+data.getDate()).slice(-2);
 let dataDisplay = `${year}-${month}-${day}`;
+console.log(dataDisplay);
 
 //create data folder and check if exist or not
 if(fs.existsSync("./data")){
@@ -49,7 +50,7 @@ scrapeIt("http://www.shirts4mike.com/shirts.php", {
             let obj = {};
             obj.title = data.title;
             obj.price = data.price;
-            obj.image = data.image;
+            obj.image = `http://www.shirts4mike.com/${data.image}`;
             obj.url = `http://www.shirts4mike.com/${querySet.querySet[index].shirt_query}`;
             obj.time = dataDisplay;
             list.push(obj);
